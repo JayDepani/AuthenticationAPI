@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/headerLink') %>
+        <title>Registration API - Home page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+        <div class="container my-3">
+            <h1>Your Profile</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-12 text-center">
+                <img src='profileImages/<%=imagename%>' id="userImage" width="400" height="400" class="img-circle"
+                    alt="User image">
+            </div>
+            <div class="col-md-6 col-12">
+                <h2 class="text-capitalize my-3">
+                    <%=name%>
+                </h2>
+                <br>
+                <p class="my-3"> <strong> Email: </strong>
+                    <%=emailID%>
+                </p>
+                <p class="my-3"> <strong> Phone no: </strong>
+                    <%=phoneNo%>
+                </p>
+                <a href="/reset_password_mail" class="btn btn-primary" id="resetBtn">Reset Password</a>
+                <p id="reset_password_msg" class="text-success my-3">
+                    <%=resetMsg%>
+                </p>
+            </div>
+        </div>
+
+
+        <%- include('partials/footer') %>
+</body>
+
+</html>

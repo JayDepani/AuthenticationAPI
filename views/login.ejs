@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/headerLink') %>
+        <title>Registration API - Login page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+        <div class="container my-3">
+            <h1>Login to your Account</h1>
+        </div>
+
+        <div class="container">
+            <form action="/login" method="POST">
+
+                <div class="form-group my-2">
+                    <label for="username">Email/Phone No </label>
+                    <input type="text" class="form-control inputStyle" name="username" id="username"
+                        aria-describedby="usernameHelp" placeholder="Enter email/phone no" required>
+                    <small id="usernameError" class="form-text"></small>
+                </div>
+
+                <div class="form-group my-2">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control inputStyle" name="password" id="password"
+                        placeholder="Password" required>
+                </div>
+
+                <button type="submit" id="loginBtn" class="btn btn-primary my-3" value="Login">Login</button>
+            </form>
+            <div class="text-center my-2">
+                <a href="/forgot_password" class="text-primary"><strong>forgot password?</strong></a>
+            </div>
+            <div class="text-center">
+                <p>If you don't have Account! <a href="/register" class="text-primary"><strong>Register
+                            here</strong></a>
+                </p>
+            </div>
+        </div>
+
+
+        <%- include('partials/footer') %>
+</body>
+
+</html>

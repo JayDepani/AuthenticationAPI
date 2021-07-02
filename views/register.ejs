@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('partials/headerLink') %>
+        <title>Registration API - Register page</title>
+</head>
+
+<body>
+    <%- include('partials/navbar') %>
+
+        <div class="container my-3">
+            <h1>Create New Account</h1>
+        </div>
+
+        <div class="container">
+            <form action="/register" method="POST" enctype="multipart/form-data">
+                <div class="form-group my-2">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control inputStyle" name="name" id="name" aria-describedby="nameHelp"
+                        placeholder="Enter your Name" required>
+                    <small id="nameError" class="form-text"></small>
+                </div>
+                <div class="form-group my-2">
+                    <label for="email">Email </label>
+                    <input type="email" class="form-control inputStyle" name="email" id="email"
+                        aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailError" class="form-text"></small>
+                </div>
+                <div class="form-group my-2">
+                    <label for="phone">Phone no</label>
+                    <input type="number" class="form-control inputStyle" name="phone" id="phone"
+                        aria-describedby="phoneHelp" placeholder="Enter your phone no" required>
+                    <small id="phoneError" class="form-text"></small>
+                </div>
+
+                <div class="form-group my-2">
+                    <label for="profileImg">Upload profile image</label>
+                    <input type="file" class="form-control inputStyle" name="filename" id="profileImg" value=""
+                        required>
+                    <small id="imageError" class="form-text"></small>
+                </div>
+
+                <div class="row my-2">
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control inputStyle" name="password" id="password"
+                                placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="form-group">
+                            <label for="cpassword">Confirm Password</label>
+                            <input type="password" class="form-control inputStyle" name="cpassword" id="cpassword"
+                                placeholder="Confirm Password" required>
+                            <small id="passwordError" class="form-text"></small>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" id="registerBtn" class="btn btn-primary my-3" value="Register">Register</button>
+            </form>
+            <div class="text-center">
+                <p>If you have already Account! <a href="/login" class="text-primary"><strong>Login Here</strong></a>
+                </p>
+            </div>
+        </div>
+
+
+        <%- include('partials/footer') %>
+</body>
+
+</html>
