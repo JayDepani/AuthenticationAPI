@@ -35,17 +35,17 @@ exports.getlogin = async (req,res)=>{
 
 exports.postregister = async (req,res)=>{
     try {
-        const password = req.body.password;
-        const cpassword = req.body.cpassword;
+        let password = req.body.password;
+        let cpassword = req.body.cpassword;
         if(password === cpassword){
-            
+            password = await bcryptjs.hash(password,10);
+            cpassword = await bcryptjs.hash(cpassword,10);
             const userRegister = new Userdata({
                 name:req.body.name,
                 email:req.body.email,
                 phone:req.body.phone,
                 profileImg:req.file.filename,
-                password: await bcryptjs.hash(this.password,10),
-                cpassword: await bcryptjs.hash(this.cpassword,10),
+                password,cpassword,
                 resetToken:'',
                 expireToken:''
             });
